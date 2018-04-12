@@ -72,7 +72,8 @@
 			button.innerHTML = "Spooky " + button.innerHTML;
             button.onclick = function() {
             	alert("Boo! You were spooked by a spooky ghost!");
-            	location.reload();}
+            	window.location.href = window.location.href;
+}
         }
         function notSpooky()
         {
