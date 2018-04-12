@@ -21,47 +21,71 @@
   	<table>
     	<tr>
         	<td colspan="3">
-            	<button>Attic</button>
+            	<button onclick="notSpooky()">Attic</button>
             </td>
         </tr>
         <tr>
         	<td>
-            	<button>Master Bedroom</button>
+            	<button onclick="notSpooky()">Master Bedroom</button>
             </td>
             <td>
-            	<button>Master Bathroom</button>
+            	<button onclick="notSpooky()">Master Bathroom</button>
             </td>
             <td>
-            	<button>Guest Bedroom</button>
+            	<button onclick="notSpooky()">Guest Bedroom</button>
             </td>
         </tr>
         <tr>
         	<td>
-            	<button>Living Room</button>
+            	<button onclick="notSpooky()">Living Room</button>
             </td>
             <td>
-            	<button>Dining Room</button>
+            	<button onclick="notSpooky()">Dining Room</button>
             </td>
             <td>
-            	<button>Kitchen</button>
+            	<button onclick="notSpooky()">Kitchen</button>
             </td>
         </tr>
         <tr>
         	<td>
-            	<button>Garden</button>
+            	<button onclick="notSpooky()">Garden</button>
             </td>
             <td>
-            	<button>Garage</button>
+            	<button onclick="notSpooky()">Garage</button>
             </td>
             <td>
-            	<button>Front Porch</button>
+            	<button onclick="notSpooky()">Front Porch</button>
             </td>
         </tr>
         <tr>
         	<td colspan="3">
-            	<button>Basement</button>
+            	<button onclick="spooky()">Basement</button>
             </td>
         </tr>
     </table>
+    <script type="text/javascript">
+    	function notSpooky()
+        {
+        	alert("There aren't any spooky ghosts to be found here!");
+        }
+        function spooky()
+        {
+        	alert("Boo! You were spooked by a spooky ghost!");
+            location.reload();
+        }
+        function autorun()
+      	{
+            var buttons = document.getElementsByTagName('button');
+            var ghostRoom = Math.floor(Math.random() * 10);
+            var button = buttons[ghostRoom];
+            alert("TEST:" + button.innerHTML);
+			button.innerHTML = "Spooky " + button.innerHTML;
+		}
+
+      	}
+      	if (window.addEventListener) window.addEventListener("load", autorun, false);
+      	else if (window.attachEvent) window.attachEvent("onload", autorun);
+      	else window.onload = autorun;
+    </script>
   </body>
 </html>
