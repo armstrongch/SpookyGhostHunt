@@ -17,7 +17,7 @@
     }
   </style>
   </head>
-  <body>
+  <body onload="autorun()">
   	<table>
     	<tr>
         	<td colspan="3">
@@ -64,28 +64,20 @@
         </tr>
     </table>
     <script type="text/javascript">
-    	function notSpooky()
+    	function autorun()
+        {
+        	var buttons = document.getElementsByTagName('button');
+            var ghostRoom = Math.floor(Math.random() * 10);
+            var button = buttons[ghostRoom];
+			button.innerHTML = "Spooky " + button.innerHTML;
+            button.onclick = function() {
+            	alert("Boo! You were spooked by a spooky ghost!");
+            	location.reload();}
+        }
+        function notSpooky()
         {
         	alert("There aren't any spooky ghosts to be found here!");
         }
-        function spooky()
-        {
-        	alert("Boo! You were spooked by a spooky ghost!");
-            location.reload();
-        }
-        function autorun()
-      	{
-            var buttons = document.getElementsByTagName('button');
-            var ghostRoom = Math.floor(Math.random() * 10);
-            var button = buttons[ghostRoom];
-            alert("TEST:" + button.innerHTML);
-			button.innerHTML = "Spooky " + button.innerHTML;
-		}
-
-      	}
-      	if (window.addEventListener) window.addEventListener("load", autorun, false);
-      	else if (window.attachEvent) window.attachEvent("onload", autorun);
-      	else window.onload = autorun;
     </script>
   </body>
 </html>
